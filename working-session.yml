@@ -1,0 +1,186 @@
+Linux working session  :
+
+Shell scripting  :
+    Automate 
+
+•	Introduction
+•	What is Shell?  
+       Is an interpreter that interpretes Linux command 
+          ls, pwd 
+•	Types of Shells  = 
+       bourne = sh, bash, ksh, csh  
+
+•	What is Shell Scripting? 
+          It is a collection of lInux commands used for Automation 
+•	First Shell Script program
+         echo 'Devops is great'     = bash
+         print('Devops is great')   = python 
+
+•	File Naming Conventions
+      for bash Shell script files should end with test.sh, test.sc 
+      for python script files should end with test.py
+       # vi test.sh 
+       echo 'JESUS IS LORD'
+       date 
+       whoami
+
+•	Comments  :
+      Explains the scripts better
+      It gives a proper explanation of scripts and make them easily re-usable
+      Single line Comment =# 
+      	# This is a working session
+      	# We are resolving scripting and commands
+      or 
+      multi-line Comment
+   <<mlc
+        This is a working session
+        We are resolving scripting and commands
+   mlc
+
+•	Variables
+     	SDV = System defined Variables 
+     		ARE generally in upper cases
+     			echo $PWD
+     	UDV = Users Devops Variables
+     		Recommended to be lower cases
+     		 dev="Devops is great"
+     		  echo $dev
+ How do you call a variable? $VariableNAME    
+mkdir ws && cd ws; echo $PWD
+# 
+•	Command line Arguments  :
+  			Command execution creates process id Represented by $$ eg pwd; echo $$ 
+  
+  			Command execution has success (0) and failed (1-127) status = echo $? 
+   			$?  = status of the last run command 
+  		pwd; echo $?  && cat ws; echo $? 
+    
+
+      $$   $?  $#  $*  $@    $0    $1    $2    $3   $4  ---$n 
+ 
+ sh cla.sh LT Dev Git dbs
+
+ sh -x cla
+    
+•	Escape Characters
+
+•	String and String slicing 
+     List1="Jessica works for Landmark Technology"
+     string2='Elvis is very rich and impactful'
+     echo ${string2}
+     echo ${string2:9}
+	 echo ${string2:8:18}
+	 echo ${string2:8:32}
+	 echo ${#string2}
+
+
+•	Arithmetic Operations
+
+      arops.sh
+		expr 3 + 2 && echo the sum is `expr 3 + 2`
+		expr 3 - 2
+		expr 3 \* 2
+		expr 10 / 2
+		expr 20 % 3
+
+# math.sh 
+  echo enter num1 
+  read num1 
+  echo enter num2
+  read num2
+  echo `expr $num1 + $num2`
+
+# ARRAYS 
+TOOLS='Linux git maven nexus docker k8s'
+tools=(Linux git maven nexus docker k8s)
+	clouds=(aws gcp azure ibm redhat vmware)
+indexing     0   1    2    3    4      5
+echo $tools
+echo ${tools[2]}
+echo ${tools[*]}
+echo ${tools[0]}
+
+echo $clouds or echo ${clouds}
+
+indexing = []
+echo ${clouds[5]}
+-----------------------------------------
+echo Please enter your current DevOps tools
+read -a tools
+echo Your DevOps Tools enter are $tools
+echo The third tool you entered is ${tools[2]}
+echo Your Devops tools  are ${tools[*]}
+-------------------------------------------
+# tools=(Linux git maven nexus docker k8s)
+# Building an array
+# devopstools=()
+
+declare -a devopstools
+devopstools[0]=GitHub
+devopstools[1]=Ant
+devopstools[2]=Maven
+devopstools[3]=Tomcat
+devopstools[4]=Wildfly
+devopstools[5]=SonarQube
+
+
+#Displaying 1st value
+echo ${devopstools[0]}
+
+#Displaying 5th value
+echo ${devopstools[4]}
+
+#Displaying all values
+echo ${devopstools[*]}
+
+#Displaying all values
+
+echo ${devopstools[@]}
+
+
+
+
+
+echo the sum of 3 and 2 is : `expr 3 + 2`
+
+echo the sum of 3 and 2 is : `expr 3 + 2`
+
+
+In equality signs
+   Linux                             Mathematics
+-eq   ==  equals to        %2==0                 = 
+-ne   !=  not equals to     2!=3
+-gt   >   greater than       3>2
+-lt   <   less than       2<3
+-ge   >=  greater or equals to 4>=3
+-le   <=  less than or equals to  3<=2
+
+Input - Output redirection in Shell Scripts
+
+2> 		Redirect standard error
+1> 		Redirect standard output
+2>&1	Redirect standard error to standard output
+
+cat array.sh > arraybk.log 
+
+sh array.sh > log 
+sh array.sh > log 2>errors
+
+
+pwd; whoami; date
+pwd && whoami && date
+sh text.sh > log 2>error
+sh text.sh > log 2>&1 
+
+
+
+•	User Interaction using read command
+•	Input and Output Redirection
+
+•	Control commands - if
+•	Control commands - for
+•	Control commands - while loop
+•	Control commands - Switch case
+•	Functions
+•	Pipe
+.   cron jobs 
